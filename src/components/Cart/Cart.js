@@ -3,10 +3,12 @@ import './Cart.css'
 
 const Cart = ({cart}) => {
     let total = 0;
+    let quantity = 0;
     let shipping = 0;
     cart.map(product => 
         { 
-            total = total+product.price;
+            quantity = quantity + product.quantity;
+            total = total+ (product.price*quantity);
             shipping = shipping + product.shipping;
             // eslint-disable-next-line no-sequences
             return total, shipping;
