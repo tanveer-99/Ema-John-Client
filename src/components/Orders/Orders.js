@@ -10,7 +10,7 @@ const Orders = () => {
     const [cart, setCart] = useState(previousCart);
 
     const handleRemoveItem = (id)=> {
-        const remainingCart = cart.filter(product => product.id !== id);
+        const remainingCart = cart.filter(product => product._id !== id);
         setCart(remainingCart);
         removeFromDb(id);
     }
@@ -19,7 +19,7 @@ const Orders = () => {
             <div className="orders-container">
                 {
                     cart.map(product => <ReviewItems
-                        key={product.id}
+                        key={product._id}
                         product={product}
                         handleRemoveItem={handleRemoveItem}
                     >
