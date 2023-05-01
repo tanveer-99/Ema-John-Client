@@ -14,7 +14,7 @@ const Shop = () => {
     const [size, setSize] = useState(10);
 
     useEffect(()=> {
-        const url = `http://localhost:5000/products?page=${page}&size=${size}`
+        const url = `http://localhost:8000/products?page=${page}&size=${size}`
         fetch(url)
         .then(res => res.json())
         .then(data => {
@@ -29,7 +29,7 @@ const Shop = () => {
         const storedCart = getShoppingCart();
         const savedCart = [];
         const ids = Object.keys(storedCart);
-        fetch('http://localhost:5000/productsByIds', {
+        fetch('http://localhost:8000/productsByIds', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
