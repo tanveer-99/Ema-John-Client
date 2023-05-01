@@ -1,7 +1,7 @@
 import { getShoppingCart } from "../utilities/fakedb";
 export const productsAndCartLoader = async ()=> {
     // get product data
-    const productData = await fetch('http://localhost:8000/products');
+    const productData = await fetch('https://ema-john-server-f175.onrender.com/products');
     const {products} = await productData.json();
     // get cart data
     const savedCart = getShoppingCart();
